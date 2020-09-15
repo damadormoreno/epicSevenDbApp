@@ -2,6 +2,7 @@ package com.deneb.epicsevenappdb.core.navigation
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -11,7 +12,6 @@ import androidx.navigation.ui.setupWithNavController
 import com.deneb.epicsevenappdb.R
 import com.deneb.epicsevenappdb.core.functional.DialogCallback
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.navigation_activity.*
 
 class MainActivity : AppCompatActivity(), PopUpDelegator {
     private lateinit var appBarConfiguration : AppBarConfiguration
@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity(), PopUpDelegator {
         val navController = host.navController
 
         appBarConfiguration = AppBarConfiguration(navController.graph)
+
+        val progress = findViewById<ProgressBar>(R.id.progress)
 
         /*toolbar.setNavigationOnClickListener {
             onBackPressed()

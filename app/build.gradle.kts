@@ -50,16 +50,17 @@ android {
 
     kotlinOptions {
         jvmTarget = "1.8"
+        useIR = true
     }
 }
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     //Kotlin
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.10")
     //Kotlin Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.8")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.3.8")
 
     implementation("androidx.appcompat:appcompat:1.2.0")
@@ -126,14 +127,17 @@ dependencies {
     implementation("androidx.compose.ui:ui-util:$composeVersion")
     implementation ("androidx.compose.ui:ui-viewbinding:$composeVersion")
 
+    //coil
+    implementation("dev.chrisbanes.accompanist:accompanist-coil:0.2.1")
+
     // Unit Testing
     testImplementation("junit:junit:4.13")
     testImplementation("com.nhaarman:mockito-kotlin:1.5.0")
     testImplementation("org.mockito:mockito-core:3.5.6")
     testImplementation("io.kotlintest:kotlintest:2.0.7")
     testImplementation("android.arch.core:core-testing:1.1.1")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.8")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
     testImplementation("org.robolectric:robolectric:4.3.1")
     testImplementation("org.amshove.kluent:kluent-android:1.61")
     androidTestImplementation("com.android.support.test:runner:1.0.2")

@@ -1,15 +1,19 @@
-package com.deneb.epicsevenappdb.features.heros.model
+package com.deneb.epicsevenappdb.features.heroes.model
 
 
 import com.google.gson.annotations.SerializedName
 
 data class ResultHeroListApi(
     @SerializedName("results")
-    val results: List<Result> = listOf(),
+    val results: List<HeroResultSoft> = listOf(),
     @SerializedName("meta")
     val meta: Meta = Meta()
 ) {
-    data class Result(
+    companion object {
+        fun empty(): ResultHeroListApi =
+            ResultHeroListApi()
+    }
+    data class HeroResultSoft(
         @SerializedName("_id")
         val _id: String = "",
         @SerializedName("id")
@@ -33,11 +37,11 @@ data class ResultHeroListApi(
         @SerializedName("assets")
         val assets: Assets = Assets(),
         @SerializedName("buffs")
-        val buffs: List<Int> = listOf(),
+        val buffs: List<Any> = listOf(),
         @SerializedName("debuffs")
-        val debuffs: List<Int> = listOf(),
+        val debuffs: List<Any> = listOf(),
         @SerializedName("common")
-        val common: List<Int> = listOf()
+        val common: List<Any> = listOf()
     ) {
         data class SelfDevotion(
             @SerializedName("type")

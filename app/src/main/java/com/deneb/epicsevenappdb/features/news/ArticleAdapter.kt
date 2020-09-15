@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import com.deneb.epicsevenappdb.R
 import com.deneb.epicsevenappdb.core.extensions.inflate
 import com.deneb.epicsevenappdb.core.extensions.loadFromUrl
-import kotlinx.android.synthetic.main.item_article_row.view.*
 import kotlin.properties.Delegates
 
 class ArticleAdapter
@@ -28,10 +27,10 @@ class ArticleAdapter
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(articleView: ArticleView, clickListener: (ArticleView) -> Unit) {
-            itemView.tvTitleArticle.text = articleView.title
+            /*itemView.tvTitleArticle.text = articleView.title
             itemView.tvDescriptionArticle.text = articleView.description
             itemView.imgArticle.loadFromUrl(articleView.urlToImage)
-            itemView.setOnClickListener { clickListener(articleView) }
+            itemView.setOnClickListener { clickListener(articleView) }*/
         }
     }
 }

@@ -1,6 +1,6 @@
-package com.deneb.epicsevenappdb.features.heros
+package com.deneb.epicsevenappdb.features.heroes
 
-import com.deneb.epicsevenappdb.features.heros.model.ResultHeroListApi
+import com.deneb.epicsevenappdb.features.heroes.model.ResultHeroListApi
 import retrofit2.Call
 import retrofit2.http.GET
 

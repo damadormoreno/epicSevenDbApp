@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import com.deneb.epicsevenappdb.core.extensions.loadFromUrl
 import com.deneb.epicsevenappdb.core.platform.BaseFragment
-import kotlinx.android.synthetic.main.fragment_article_detail.*
 import android.content.Intent
 import android.net.Uri
 import com.deneb.epicsevenappdb.R
@@ -28,17 +27,17 @@ class ArticleDetailFragment : BaseFragment() {
     }
 
     private fun initLayout() {
-        imageDetail.loadFromUrl(article?.urlToImage?:"")
+/*        imageDetail.loadFromUrl(article?.urlToImage?:"")
         titleDetail.text = article?.title
         authorDetail.text = article?.author
-        contentDetail.text = article?.content
+        contentDetail.text = article?.content*/
     }
 
     private fun initListener() {
-        tvOpenInChrome.setOnClickListener {
+/*        tvOpenInChrome.setOnClickListener {
             val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(article?.url))
             startActivity(browserIntent)
-        }
+        }*/
     }
 
 }

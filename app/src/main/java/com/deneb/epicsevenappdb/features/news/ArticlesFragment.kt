@@ -12,7 +12,6 @@ import com.deneb.epicsevenappdb.core.extensions.failure
 import com.deneb.epicsevenappdb.core.extensions.observe
 import com.deneb.epicsevenappdb.core.functional.DialogCallback
 import com.deneb.epicsevenappdb.core.platform.BaseFragment
-import kotlinx.android.synthetic.main.fragment_articles.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -47,13 +46,13 @@ class ArticlesFragment : BaseFragment() {
 
     private fun initializeView() {
 
-        articleList.layoutManager = LinearLayoutManager(activity)
+/*        articleList.layoutManager = LinearLayoutManager(activity)
         articleList.adapter = articleAdapter
 
         searchBarProfiles.onActionViewExpanded()
         searchBarProfiles.isFocusable = false
         searchBarProfiles.clearFocus()
-        searchBarProfiles.queryHint = "Buscar"
+        searchBarProfiles.queryHint = "Buscar"*/
 
     }
 
@@ -65,7 +64,7 @@ class ArticlesFragment : BaseFragment() {
                 ?.navigate(R.id.action_articlesFragment_to_articleDetailFragment, bundle)
         }
 
-        searchBarProfiles.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+/*        searchBarProfiles.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(s: String): Boolean {
                 return false
             }
@@ -74,7 +73,7 @@ class ArticlesFragment : BaseFragment() {
                 getArticlesViewModel.filter(s)
                 return false
             }
-        })
+        })*/
     }
 
     private suspend fun loadArticles() {

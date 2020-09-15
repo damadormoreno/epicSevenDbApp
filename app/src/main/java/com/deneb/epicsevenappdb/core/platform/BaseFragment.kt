@@ -7,11 +7,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import com.deneb.epicsevenappdb.R
 import com.deneb.epicsevenappdb.core.functional.DialogCallback
 import com.deneb.epicsevenappdb.core.navigation.MainActivity
 import com.deneb.epicsevenappdb.core.navigation.PopUpDelegator
-import kotlinx.android.synthetic.main.navigation_activity.*
 import org.koin.android.ext.android.inject
 
 abstract class BaseFragment: androidx.fragment.app.Fragment() {
@@ -35,7 +35,8 @@ abstract class BaseFragment: androidx.fragment.app.Fragment() {
 
     private fun progressStatus(viewStatus: Int) =
         with(activity) {
-            if (this is MainActivity) this.progress.visibility = viewStatus
+            val progress = this?.findViewById<ProgressBar>(R.id.progress)
+            if (this is MainActivity) progress?.visibility = viewStatus
         }
 
     override fun onAttach(activity: Activity) {

@@ -25,7 +25,7 @@
         tools:layout="@layout/fragment_favorites" />
     <fragment
         android:id="@+id/heroesFragment"
-        android:name="com.deneb.epicsevenappdb.features.heros.HeroesFragment"
+        android:name="com.deneb.epicsevenappdb.features.heroes.HeroesFragment"
         android:label="fragment_heroes"
         tools:layout="@layout/fragment_heroes" />
     <fragment

@@ -1,4 +1,4 @@
-package com.deneb.epicsevenappdb.features.heros.model
+package com.deneb.epicsevenappdb.features.heroes.model
 
 
 import com.google.gson.annotations.SerializedName
