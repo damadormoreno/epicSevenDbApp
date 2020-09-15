@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main_navigation"
+        app:startDestination="@id/heroesFragment">
+
+    <fragment
+            android:id="@+id/articlesFragment"
+            android:name="com.deneb.epicsevenappdb.features.news.ArticlesFragment"
+            android:label="fragment_articles"
+            tools:layout="@layout/fragment_articles" >
+        <action
+                android:id="@+id/action_articlesFragment_to_articleDetailFragment"
+                app:destination="@id/articleDetailFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/articleDetailFragment"
+            android:name="com.deneb.epicsevenappdb.features.news.ArticleDetailFragment"
+            android:label="ArticleDetailFragment" />
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.deneb.epicsevenappdb.features.favorites.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" />
+    <fragment
+        android:id="@+id/heroesFragment"
+        android:name="com.deneb.epicsevenappdb.features.heros.HeroesFragment"
+        android:label="fragment_heroes"
+        tools:layout="@layout/fragment_heroes" />
+    <fragment
+        android:id="@+id/equipmentFragment"
+        android:name="com.deneb.epicsevenappdb.features.equipment.EquipmentFragment"
+        android:label="fragment_equipment"
+        tools:layout="@layout/fragment_equipment" />
+    <fragment
+        android:id="@+id/artifactsFragment"
+        android:name="com.deneb.epicsevenappdb.features.artifacts.ArtifactsFragment"
+        android:label="fragment_artifacts"
+        tools:layout="@layout/fragment_artifacts" />
+    <fragment
+        android:id="@+id/moraleFragment"
+        android:name="com.deneb.epicsevenappdb.features.morale.MoraleFragment"
+        android:label="fragment_morale"
+        tools:layout="@layout/fragment_morale" />
+</navigation>
