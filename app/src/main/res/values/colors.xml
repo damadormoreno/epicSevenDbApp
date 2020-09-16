@@ -7,4 +7,10 @@
     <color name="translucentBackground">#72000000</color>
     <color name="progressBar">#3f51b5</color>
     <color name="box_rectangle_background">#6e6868</color>
+
+    <color name="wind">#4CAF50</color>
+    <color name="fire">#F87E7E</color>
+    <color name="ice">#00BCD4</color>
+    <color name="light">#DFCC24</color>
+    <color name="dark">#67696A</color>
 </resources>

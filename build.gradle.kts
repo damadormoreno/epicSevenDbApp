@@ -18,8 +18,7 @@ allprojects {
     repositories {
         google()
         jcenter()
-        // Si necesitamos introducir con url
-        //maven { url = uri("https://jitpack.io") }
+        maven { url = uri("https://jitpack.io") }
     }
 }
 

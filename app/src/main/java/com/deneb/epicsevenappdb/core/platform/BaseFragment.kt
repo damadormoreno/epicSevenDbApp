@@ -7,19 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
+import androidx.fragment.app.Fragment
 import com.deneb.epicsevenappdb.R
 import com.deneb.epicsevenappdb.core.functional.DialogCallback
 import com.deneb.epicsevenappdb.core.navigation.MainActivity
 import com.deneb.epicsevenappdb.core.navigation.PopUpDelegator
 
-abstract class BaseFragment: androidx.fragment.app.Fragment() {
+abstract class BaseFragment: Fragment() {
 
     private var popUpDelegator: PopUpDelegator? = null
 
-    abstract fun layoutId(): Int
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
-        inflater.inflate(layoutId(), container, false)
 
     open fun onBackPressed() {
 

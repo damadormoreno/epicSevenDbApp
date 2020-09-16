@@ -12,7 +12,6 @@ import com.deneb.epicsevenappdb.R
 
 class ArticleDetailFragment : BaseFragment() {
 
-    override fun layoutId(): Int = R.layout.fragment_article_detail
 
     private var article: ArticleView? = null
 

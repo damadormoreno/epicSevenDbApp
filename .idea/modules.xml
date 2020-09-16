@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/epic7dbapp.iml" filepath="$PROJECT_DIR$/.idea/modules/epic7dbapp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/epic7dbapp.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/epic7dbapp.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/epic7dbapp.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/epic7dbapp.buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="epic7dbapp/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/epic7dbapp.iml" filepath="$PROJECT_DIR$/.idea/modules/epic7dbapp.iml" group="epic7dbapp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/epic7dbapp_buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/epic7dbapp_buildSrc.iml" group="epic7dbapp/epic7dbapp_buildSrc" />
     </modules>
   </component>
 </project>

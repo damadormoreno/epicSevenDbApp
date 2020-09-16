@@ -21,8 +21,6 @@ import org.koin.android.ext.android.inject
 @ExperimentalCoroutinesApi
 class ArticlesFragment : BaseFragment() {
 
-    override fun layoutId() = R.layout.fragment_articles
-
     private val articleAdapter: ArticleAdapter by inject()
     private val getArticlesViewModel: GetArticlesViewModel by inject()
 

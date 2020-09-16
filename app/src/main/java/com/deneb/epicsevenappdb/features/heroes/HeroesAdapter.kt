@@ -1,15 +1,16 @@
 package com.deneb.epicsevenappdb.features.heroes
 
+import android.content.Context
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.RatingBar
-import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.deneb.epicsevenappdb.R
 import com.deneb.epicsevenappdb.core.extensions.inflate
 import com.deneb.epicsevenappdb.core.extensions.loadFromUrl
+import com.deneb.epicsevenappdb.databinding.ItemHeroRowBinding
 import com.deneb.epicsevenappdb.features.heroes.model.ResultHeroListApi
+import org.jetbrains.anko.backgroundColor
 import kotlin.properties.Delegates
 
 class HeroesAdapter
@@ -30,17 +31,50 @@ class HeroesAdapter
     override fun getItemCount() = collection.size
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val tvTitleArticle = itemView.findViewById<TextView>(R.id.tvTitleArticle)
-        val tvDescriptionArticle = itemView.findViewById<TextView>(R.id.tvDescriptionArticle)
-        val imgArticle = itemView.findViewById<ImageView>(R.id.imgHero)
-        val ratingBar = itemView.findViewById<RatingBar>(R.id.ratingBar)
+        private val binding = ItemHeroRowBinding.bind(itemView)
+        val context: Context = binding.constraintItem.context
         fun bind(heroe: ResultHeroListApi.HeroResultSoft, clickListener: (ResultHeroListApi.HeroResultSoft) -> Unit) {
-            tvTitleArticle.text = heroe.name
-            tvDescriptionArticle.text = heroe.role
-            imgArticle.loadFromUrl(heroe.assets.icon)
-            ratingBar.numStars = heroe.rarity
+            binding.tvNameHero.text = heroe.name
+            binding.imgHero.loadFromUrl(heroe.assets.icon)
+            when(heroe.attribute) {
+                "wind" -> {
+                    binding.constraintItem.backgroundColor = ContextCompat.getColor(context, R.color.wind)
+                    binding.imgElement.setImageResource(R.drawable.cm_icon_prowind)
+                }
+                "light" -> {
+                    binding.constraintItem.backgroundColor =
+                        ContextCompat.getColor(context, R.color.light)
+                    binding.imgElement.setImageResource(R.drawable.cm_icon_prolight)
+                }
+                "dark" -> {
+                    binding.constraintItem.backgroundColor =
+                        ContextCompat.getColor(context, R.color.dark)
+                    binding.imgElement.setImageResource(R.drawable.cm_icon_prodark)
+                }
+                "fire" -> {
+                    binding.constraintItem.backgroundColor =
+                        ContextCompat.getColor(context, R.color.fire)
+                    binding.imgElement.setImageResource(R.drawable.cm_icon_profire)
+                }
+                "ice" -> {
+                    binding.constraintItem.backgroundColor =
+                        ContextCompat.getColor(context, R.color.ice)
+                    binding.imgElement.setImageResource(R.drawable.cm_icon_proice)
+                }
+            }
+
+            when(heroe.role) {
+                "warrior" -> binding.imgRole.setImageResource(R.drawable.cm_icon_role_warrior)
+                "knight" -> binding.imgRole.setImageResource(R.drawable.cm_icon_role_knight)
+                "mage" -> binding.imgRole.setImageResource(R.drawable.cm_icon_role_mage)
+                "assassin" -> binding.imgRole.setImageResource(R.drawable.cm_icon_role_assassin)
+                "ranger" -> binding.imgRole.setImageResource(R.drawable.cm_icon_role_ranger)
+                "manauser" -> binding.imgRole.setImageResource(R.drawable.cm_icon_role_manauser)
+            }
+
             itemView.setOnClickListener { clickListener(heroe)
             }
+
         }
     }
 }

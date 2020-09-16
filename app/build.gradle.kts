@@ -107,6 +107,9 @@ dependencies {
 
     implementation("com.michael-bull.kotlin-result:kotlin-result:1.1.6")
 
+    //RatingBar
+
+
     //Compose
 
 /*    val composeVersion = "1.0.0-alpha02"
