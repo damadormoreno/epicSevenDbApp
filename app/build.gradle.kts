@@ -23,10 +23,6 @@ android {
         }
     }
 
-    /*viewBinding {
-        enabled = true
-    }*/
-
     packagingOptions {
         exclude("LICENSE.txt")
         exclude("META-INF/DEPENDENCIES")
@@ -36,7 +32,8 @@ android {
     }
 
     buildFeatures {
-        compose=true
+        //compose=true
+        viewBinding=true
     }
     composeOptions {
         kotlinCompilerVersion = "1.4.10"
@@ -50,7 +47,7 @@ android {
 
     kotlinOptions {
         jvmTarget = "1.8"
-        useIR = true
+        //useIR = true
     }
 }
 
@@ -80,9 +77,16 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore-ktx:21.6.0")
 
     // KOIN
-    implementation("org.koin:koin-android:2.1.6")
-    implementation("org.koin:koin-android-viewmodel:2.1.6")
-    implementation("org.koin:koin-android-scope:2.1.6")
+    val koin_version = "2.1.6"
+    // Koin AndroidX Scope feature
+    implementation ("org.koin:koin-androidx-scope:$koin_version")
+
+// Koin AndroidX ViewModel feature
+    implementation( "org.koin:koin-androidx-viewmodel:$koin_version")
+
+// Koin AndroidX Fragment Factory (unstable version)
+    implementation ("org.koin:koin-androidx-fragment:$koin_version")
+    //implementation("org.koin:koin-androidx-viewmodel:2.1.0-alpha-10")
 
     //Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.0")
@@ -105,7 +109,7 @@ dependencies {
 
     //Compose
 
-    val composeVersion = "1.0.0-alpha02"
+/*    val composeVersion = "1.0.0-alpha02"
 
     implementation("androidx.compose.runtime:runtime-dispatch:$composeVersion")
     implementation("androidx.compose.runtime:runtime:$composeVersion")
@@ -128,7 +132,7 @@ dependencies {
     implementation ("androidx.compose.ui:ui-viewbinding:$composeVersion")
 
     //coil
-    implementation("dev.chrisbanes.accompanist:accompanist-coil:0.2.1")
+    implementation("dev.chrisbanes.accompanist:accompanist-coil:0.2.1")*/
 
     // Unit Testing
     testImplementation("junit:junit:4.13")

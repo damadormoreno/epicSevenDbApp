@@ -17,7 +17,7 @@ class ArticleAdapter
     internal var clickListener: (ArticleView) -> Unit = { }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        ViewHolder(parent.inflate(R.layout.item_article_row))
+        ViewHolder(parent.inflate(R.layout.item_hero_row))
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(collection[position], clickListener)

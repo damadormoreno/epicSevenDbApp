@@ -1,7 +1,6 @@
 package com.deneb.epicsevenappdb.core.platform
 
 import android.app.Activity
-import androidx.lifecycle.ViewModelProvider
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,15 +11,12 @@ import com.deneb.epicsevenappdb.R
 import com.deneb.epicsevenappdb.core.functional.DialogCallback
 import com.deneb.epicsevenappdb.core.navigation.MainActivity
 import com.deneb.epicsevenappdb.core.navigation.PopUpDelegator
-import org.koin.android.ext.android.inject
 
 abstract class BaseFragment: androidx.fragment.app.Fragment() {
 
     private var popUpDelegator: PopUpDelegator? = null
 
     abstract fun layoutId(): Int
-
-    private val viewModelFactory: ViewModelProvider.Factory by inject()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
         inflater.inflate(layoutId(), container, false)
