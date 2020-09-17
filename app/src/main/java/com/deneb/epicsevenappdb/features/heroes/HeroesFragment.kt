@@ -4,35 +4,22 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.deneb.epicsevenappdb.R
 import com.deneb.epicsevenappdb.core.exception.Failure
 import com.deneb.epicsevenappdb.core.extensions.failure
 import com.deneb.epicsevenappdb.core.extensions.observe
-import com.deneb.epicsevenappdb.core.functional.DialogCallback
-import com.deneb.epicsevenappdb.core.functional.viewBinding
-import com.deneb.epicsevenappdb.core.navigation.MainActivity
 import com.deneb.epicsevenappdb.core.platform.BaseFragment
 import com.deneb.epicsevenappdb.databinding.FragmentHeroesBinding
 import com.deneb.epicsevenappdb.features.heroes.model.ResultHeroListApi
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 @ExperimentalCoroutinesApi
-class HeroesFragment : Fragment(R.layout.fragment_heroes) {
-
-    private val binding by viewBinding(FragmentHeroesBinding::bind)
+class HeroesFragment : BaseFragment<FragmentHeroesBinding>() {
 
     private val getHeroesViewModel: GetHeroesViewModel by sharedViewModel()
     private val heroesAdapter: HeroesAdapter by inject()
-    //private val uiScope = CoroutineScope(Dispatchers.Main)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,14 +37,21 @@ class HeroesFragment : Fragment(R.layout.fragment_heroes) {
     }
 
     private fun initializeView() {
-        binding.heroesList.layoutManager = LinearLayoutManager(activity)
-        binding.heroesList.adapter = heroesAdapter
+        binding?.heroesList?.layoutManager = LinearLayoutManager(activity)
+        binding?.heroesList?.adapter = heroesAdapter
     }
 
     private fun initListeners() {
         heroesAdapter.clickListener = { hero ->
 
         }
+    }
+
+    override fun setBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentHeroesBinding {
+        return FragmentHeroesBinding.inflate(inflater, container, false)
     }
 
     private suspend fun loadHeroes() {
@@ -83,15 +77,5 @@ class HeroesFragment : Fragment(R.layout.fragment_heroes) {
             else -> TODO()
         }
     }
-
-    private fun showProgress() = progressStatus(View.VISIBLE)
-
-    private fun hideProgress() = progressStatus(View.GONE)
-
-    private fun progressStatus(viewStatus: Int) =
-        with(activity) {
-            val progress = this?.findViewById<ProgressBar>(R.id.progress)
-            if (this is MainActivity) progress?.visibility = viewStatus
-        }
 
 }

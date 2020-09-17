@@ -2,9 +2,11 @@ package com.deneb.epicsevenappdb.features.news
 
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.appcompat.widget.SearchView
 import android.view.View
+import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.deneb.epicsevenappdb.R
 import com.deneb.epicsevenappdb.core.exception.Failure
@@ -12,6 +14,7 @@ import com.deneb.epicsevenappdb.core.extensions.failure
 import com.deneb.epicsevenappdb.core.extensions.observe
 import com.deneb.epicsevenappdb.core.functional.DialogCallback
 import com.deneb.epicsevenappdb.core.platform.BaseFragment
+import com.deneb.epicsevenappdb.databinding.FragmentArticlesBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -19,7 +22,7 @@ import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 
 @ExperimentalCoroutinesApi
-class ArticlesFragment : BaseFragment() {
+class ArticlesFragment : BaseFragment<FragmentArticlesBinding>() {
 
     private val articleAdapter: ArticleAdapter by inject()
     private val getArticlesViewModel: GetArticlesViewModel by inject()
@@ -109,5 +112,10 @@ class ArticlesFragment : BaseFragment() {
             }
         })
     }
+
+    override fun setBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentArticlesBinding = FragmentArticlesBinding.inflate(inflater, container, false)
 
 }

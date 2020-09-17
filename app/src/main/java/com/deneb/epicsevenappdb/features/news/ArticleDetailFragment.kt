@@ -7,10 +7,13 @@ import com.deneb.epicsevenappdb.core.extensions.loadFromUrl
 import com.deneb.epicsevenappdb.core.platform.BaseFragment
 import android.content.Intent
 import android.net.Uri
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import com.deneb.epicsevenappdb.R
+import com.deneb.epicsevenappdb.databinding.FragmentArticlesBinding
 
 
-class ArticleDetailFragment : BaseFragment() {
+class ArticleDetailFragment : BaseFragment<FragmentArticlesBinding>() {
 
 
     private var article: ArticleView? = null
@@ -37,6 +40,13 @@ class ArticleDetailFragment : BaseFragment() {
             val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(article?.url))
             startActivity(browserIntent)
         }*/
+    }
+
+    override fun setBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentArticlesBinding {
+        return FragmentArticlesBinding.inflate(inflater, container, false)
     }
 
 }
