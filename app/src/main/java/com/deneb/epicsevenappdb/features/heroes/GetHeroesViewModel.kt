@@ -47,4 +47,14 @@ class GetHeroesViewModel(
     private fun handleHeroes(heroes: List<HeroEntity>) {
         _heroes.value = heroes
     }
+
+    fun showOnlyMoonlights() {
+        _heroes.value = heroes.value?.filter {
+            it.moonlight
+        }
+
+        _heroes.value = heroes.value?.filter {
+            it.name.contains("a")
+        }
+    }
 }

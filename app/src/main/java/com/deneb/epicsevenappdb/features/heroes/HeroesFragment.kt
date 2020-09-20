@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.deneb.epicsevenappdb.core.exception.Failure
 import com.deneb.epicsevenappdb.core.extensions.failure
 import com.deneb.epicsevenappdb.core.extensions.observe
+import com.deneb.epicsevenappdb.core.extensions.onClick
 import com.deneb.epicsevenappdb.core.platform.BaseFragment
 import com.deneb.epicsevenappdb.databinding.FragmentHeroesBinding
 import com.deneb.epicsevenappdb.features.heroes.model.HeroEntity
@@ -46,6 +47,8 @@ class HeroesFragment : BaseFragment<FragmentHeroesBinding>() {
         heroesAdapter.clickListener = { hero ->
 
         }
+
+        binding?.floating?.onClick { getHeroesViewModel.showOnlyMoonlights() }
     }
 
     override fun setBinding(
