@@ -6,24 +6,6 @@
         app:startDestination="@id/heroesFragment">
 
     <fragment
-            android:id="@+id/articlesFragment"
-            android:name="com.deneb.epicsevenappdb.features.news.ArticlesFragment"
-            android:label="fragment_articles"
-            tools:layout="@layout/fragment_articles" >
-        <action
-                android:id="@+id/action_articlesFragment_to_articleDetailFragment"
-                app:destination="@id/articleDetailFragment" />
-    </fragment>
-    <fragment
-            android:id="@+id/articleDetailFragment"
-            android:name="com.deneb.epicsevenappdb.features.news.ArticleDetailFragment"
-            android:label="ArticleDetailFragment" />
-    <fragment
-        android:id="@+id/favoritesFragment"
-        android:name="com.deneb.epicsevenappdb.features.favorites.FavoritesFragment"
-        android:label="fragment_favorites"
-        tools:layout="@layout/fragment_favorites" />
-    <fragment
         android:id="@+id/heroesFragment"
         android:name="com.deneb.epicsevenappdb.features.heroes.HeroesFragment"
         android:label="fragment_heroes"

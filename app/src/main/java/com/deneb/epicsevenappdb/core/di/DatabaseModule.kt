@@ -2,8 +2,7 @@ package com.deneb.epicsevenappdb.core.di
 
 import androidx.room.Room
 import com.deneb.epicsevenappdb.core.dataBase.AppDatabase
-import com.deneb.epicsevenappdb.features.news.ArticlesLocal
-import com.deneb.epicsevenappdb.features.news.FetchLocal
+import com.deneb.epicsevenappdb.features.heroes.HeroesLocal
 import org.koin.dsl.module
 
 val databaseModule = module {
@@ -11,10 +10,10 @@ val databaseModule = module {
         Room.databaseBuilder(
             get(),
             AppDatabase::class.java,
-            "newsDB"
+            "epicDB"
         )
             .build()
     }
-    factory { FetchLocal(get(), get()) }
-    factory { ArticlesLocal(get(), get()) }
+
+    factory { HeroesLocal(get()) }
 }

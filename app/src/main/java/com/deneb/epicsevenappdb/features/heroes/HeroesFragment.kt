@@ -10,7 +10,8 @@ import com.deneb.epicsevenappdb.core.extensions.failure
 import com.deneb.epicsevenappdb.core.extensions.observe
 import com.deneb.epicsevenappdb.core.platform.BaseFragment
 import com.deneb.epicsevenappdb.databinding.FragmentHeroesBinding
-import com.deneb.epicsevenappdb.features.heroes.model.ResultHeroListApi
+import com.deneb.epicsevenappdb.features.heroes.model.HeroEntity
+import com.deneb.epicsevenappdb.features.heroes.model.HeroNetwork
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -58,7 +59,7 @@ class HeroesFragment : BaseFragment<FragmentHeroesBinding>() {
         getHeroesViewModel.getHeroes()
     }
 
-    private fun renderHeroes(heroes: List<ResultHeroListApi.HeroResultSoft>?) {
+    private fun renderHeroes(heroes: List<HeroEntity>?) {
         heroesAdapter.collection = heroes.orEmpty()
     }
 

@@ -5,11 +5,11 @@ import com.google.gson.annotations.SerializedName
 
 data class ResultHeroApi(
     @SerializedName("results")
-    val results: List<Result> = listOf(),
+    val concreteHeroes: List<ConcreteHero> = listOf(),
     @SerializedName("meta")
     val meta: Meta = Meta()
 ) {
-    data class Result(
+    data class ConcreteHero(
         @SerializedName("_id")
         val _id: String = "",
         @SerializedName("id")

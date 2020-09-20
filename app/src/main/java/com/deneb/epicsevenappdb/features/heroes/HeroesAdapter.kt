@@ -9,17 +9,18 @@ import com.deneb.epicsevenappdb.R
 import com.deneb.epicsevenappdb.core.extensions.inflate
 import com.deneb.epicsevenappdb.core.extensions.loadFromUrl
 import com.deneb.epicsevenappdb.databinding.ItemHeroRowBinding
-import com.deneb.epicsevenappdb.features.heroes.model.ResultHeroListApi
+import com.deneb.epicsevenappdb.features.heroes.model.HeroEntity
+import com.deneb.epicsevenappdb.features.heroes.model.HeroNetwork
 import org.jetbrains.anko.backgroundColor
 import kotlin.properties.Delegates
 
 class HeroesAdapter
     : RecyclerView.Adapter<HeroesAdapter.ViewHolder>(){
-    internal var collection: List<ResultHeroListApi.HeroResultSoft> by Delegates.observable(emptyList()) {
+    internal var collection: List<HeroEntity> by Delegates.observable(emptyList()) {
             _, _, _ -> notifyDataSetChanged()
     }
 
-    internal var clickListener: (ResultHeroListApi.HeroResultSoft) -> Unit = { }
+    internal var clickListener: (HeroEntity) -> Unit = { }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         ViewHolder(parent.inflate(R.layout.item_hero_row))
@@ -33,7 +34,7 @@ class HeroesAdapter
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemHeroRowBinding.bind(itemView)
         val context: Context = binding.constraintItem.context
-        fun bind(heroe: ResultHeroListApi.HeroResultSoft, clickListener: (ResultHeroListApi.HeroResultSoft) -> Unit) {
+        fun bind(heroe: HeroEntity, clickListener: (HeroEntity) -> Unit) {
             binding.tvNameHero.text = heroe.name
             binding.imgHero.loadFromUrl(heroe.assets.icon)
             when(heroe.attribute) {

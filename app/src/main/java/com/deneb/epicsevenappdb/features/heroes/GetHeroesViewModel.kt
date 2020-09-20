@@ -1,13 +1,12 @@
 package com.deneb.epicsevenappdb.features.heroes
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import com.deneb.epicsevenappdb.core.functional.map
 import com.deneb.epicsevenappdb.core.platform.BaseViewModel
-import com.deneb.epicsevenappdb.features.heroes.model.ResultHeroListApi.HeroResultSoft
+import com.deneb.epicsevenappdb.features.heroes.model.HeroEntity
+import com.deneb.epicsevenappdb.features.heroes.model.HeroNetwork
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.map
@@ -20,8 +19,8 @@ class GetHeroesViewModel(
     private val getHeroes: GetHeroes
 ): BaseViewModel() {
 
-    private val _heroes: MutableLiveData<List<HeroResultSoft>> = MutableLiveData()
-    val heroes: LiveData<List<HeroResultSoft>> = _heroes
+    private val _heroes: MutableLiveData<List<HeroEntity>> = MutableLiveData()
+    val heroes: LiveData<List<HeroEntity>> = _heroes
 
     private val _loading: MutableLiveData<Boolean> = MutableLiveData()
     val loading: LiveData<Boolean> = _loading
@@ -35,17 +34,17 @@ class GetHeroesViewModel(
         getHeroes.invoke(Any())
             .onStart { _loading.value = true }
             .onEach { _loading.value = false }
-            .map { either ->
+/*            .map { either ->
                 either.map {
-                    it.results
+                    it
                 }
-            }
+            }*/
             .collect {
                 it.fold(::handleFailure, ::handleHeroes)
             }
     }
 
-    private fun handleHeroes(heroes: List<HeroResultSoft>) {
+    private fun handleHeroes(heroes: List<HeroEntity>) {
         _heroes.value = heroes
     }
 }
