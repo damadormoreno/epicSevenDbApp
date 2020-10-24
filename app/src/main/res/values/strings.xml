@@ -9,4 +9,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="ver_m_s">Ver más</string>
+    <string name="five_stars">⭐⭐️⭐️️⭐⭐️</string>
+    <string name="four_star">⭐⭐️⭐️️⭐️</string>
+    <string name="three_star">⭐⭐️⭐️️</string>
 </resources>

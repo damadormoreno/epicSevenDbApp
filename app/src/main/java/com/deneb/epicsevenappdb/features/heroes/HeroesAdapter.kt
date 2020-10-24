@@ -73,6 +73,18 @@ class HeroesAdapter
                 "manauser" -> binding.imgRole.setImageResource(R.drawable.cm_icon_role_manauser)
             }
 
+            when(heroe.rarity){
+                3 -> binding.tvStars.text = binding.tvStars.context.resources.getString(R.string.three_star)
+                4 -> binding.tvStars.text = binding.tvStars.context.resources.getString(R.string.four_star)
+                5 -> binding.tvStars.text = binding.tvStars.context.resources.getString(R.string.five_stars)
+            }
+
+            when(heroe.rarity){
+                3 -> binding.imgStar.setImageResource(R.drawable.ic_tres_estrellas)
+                4 -> binding.imgStar.setImageResource(R.drawable.ic_cuatro)
+                5 -> binding.imgStar.setImageResource(R.drawable.ic_cinco_estrellas)
+            }
+
             itemView.setOnClickListener { clickListener(heroe)
             }
 

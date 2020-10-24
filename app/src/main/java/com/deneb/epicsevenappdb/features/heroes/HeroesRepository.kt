@@ -4,19 +4,16 @@ import android.content.SharedPreferences
 import com.deneb.epicsevenappdb.core.exception.Failure
 import com.deneb.epicsevenappdb.core.extensions.SharedPrefences.set
 import com.deneb.epicsevenappdb.core.functional.Either
-import com.deneb.epicsevenappdb.core.functional.map
 import com.deneb.epicsevenappdb.core.functional.request
 import com.deneb.epicsevenappdb.core.platform.NetworkHandler
 import com.deneb.epicsevenappdb.core.platform.ServiceKOs
 import com.deneb.epicsevenappdb.features.heroes.model.HeroEntity
-import com.deneb.epicsevenappdb.features.heroes.model.HeroNetwork
 import com.deneb.epicsevenappdb.features.heroes.model.ResultApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import java.lang.Exception
 import java.util.*
 
 interface HeroesRepository {
@@ -50,7 +47,7 @@ interface HeroesRepository {
             return when (networkHandler.isConnected) {
                 true -> request(service.getHeros(), {
                     saveInDb(it)
-                    it.heroNetworks.map { it.toHeroEntity() }
+                    it.heroNetworks.map { heroNetwork -> heroNetwork.toHeroEntity() }
                 }, ResultApi.empty())
                 false -> Either.Left(Failure.NetworkConnection())
             }

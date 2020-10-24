@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="420dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalCenter"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalCenter2"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.66"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Filter"
+            android:textColor="@color/primary_text"
+            android:textSize="16sp"/>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkFire"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/verticalCenter"
+            android:text="Fire️"/>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkRanger"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:layout_constraintLeft_toRightOf="@+id/verticalCenter"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="Ranger"/>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkIce"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/checkFire"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/verticalCenter"
+            android:text="Ice"/>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkWarrior"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/checkFire"
+            app:layout_constraintLeft_toRightOf="@+id/verticalCenter"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="Warrior"/>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkWind"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/checkIce"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/verticalCenter"
+            android:text="Wind"/>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkKnight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/checkIce"
+            app:layout_constraintLeft_toRightOf="@+id/verticalCenter"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="Knight"/>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkLight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/checkWind"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/verticalCenter"
+            android:text="Light"/>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkMage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/checkWind"
+            app:layout_constraintLeft_toRightOf="@+id/verticalCenter"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="Mage"/>
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkDark"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/checkLight"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/verticalCenter"
+            android:text="Dark"/>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkAssassin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/checkLight"
+            app:layout_constraintLeft_toRightOf="@+id/verticalCenter"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="Thief"/>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkManauser"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/checkDark"
+            app:layout_constraintLeft_toRightOf="@+id/verticalCenter"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="Soul Weaver"/>
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkFiveStar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@+id/verticalCenter2"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="@string/five_stars"/>
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkFourStar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@+id/verticalCenter2"
+            app:layout_constraintTop_toBottomOf="@+id/checkFiveStar"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="@string/four_star"/>
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkThreeStar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@+id/verticalCenter2"
+            app:layout_constraintTop_toBottomOf="@+id/checkFourStar"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="@string/three_star"/>
+
+
+        <Button
+            android:id="@+id/btConfirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkManauser"
+            android:text="Confirm"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

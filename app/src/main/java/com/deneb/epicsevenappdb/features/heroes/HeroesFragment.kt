@@ -12,7 +12,6 @@ import com.deneb.epicsevenappdb.core.extensions.onClick
 import com.deneb.epicsevenappdb.core.platform.BaseFragment
 import com.deneb.epicsevenappdb.databinding.FragmentHeroesBinding
 import com.deneb.epicsevenappdb.features.heroes.model.HeroEntity
-import com.deneb.epicsevenappdb.features.heroes.model.HeroNetwork
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -21,6 +20,7 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 class HeroesFragment : BaseFragment<FragmentHeroesBinding>() {
 
     private val getHeroesViewModel: GetHeroesViewModel by sharedViewModel()
+    private val filterViewModel: FilterViewModel by sharedViewModel()
     private val heroesAdapter: HeroesAdapter by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +48,12 @@ class HeroesFragment : BaseFragment<FragmentHeroesBinding>() {
 
         }
 
-        binding?.floating?.onClick { getHeroesViewModel.showOnlyMoonlights() }
+        binding?.floating?.onClick {
+            BottomSheetFilter(this.requireActivity())
+                .create("Filter") { listTypes, listClasses, listStars ->
+                    getHeroesViewModel.filterTypeAndClass(listTypes, listClasses, listStars)
+            }
+        }
     }
 
     override fun setBinding(
