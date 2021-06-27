@@ -89,8 +89,8 @@ dependencies {
     //implementation("org.koin:koin-androidx-viewmodel:2.1.0-alpha-10")
 
     //Navigation
-    implementation("androidx.navigation:navigation-fragment-ktx:2.3.0")
-    implementation("androidx.navigation:navigation-ui-ktx:2.3.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.3.1")
+    implementation("androidx.navigation:navigation-ui-ktx:2.3.1")
 
 
     kapt("androidx.room:room-compiler:2.2.5")
@@ -102,10 +102,12 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.11.0")
 
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.8.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
     implementation("androidx.room:room-runtime:2.2.5")
 
     implementation("com.michael-bull.kotlin-result:kotlin-result:1.1.6")
+
+    implementation ("com.github.HarinTrivedi:FABRevealMenu-master:2.0.0")
 
     //RatingBar
 

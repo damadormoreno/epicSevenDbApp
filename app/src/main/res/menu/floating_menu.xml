@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/heroesFragment"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Heroes" />
+    <item
+        android:id="@id/artifactsFragment"
+        android:icon="@drawable/ic_star_black_24dp"
+        android:title="Artefactos" />
+    <item
+        android:id="@id/equipmentFragment"
+        android:icon="@drawable/ic_star_black_24dp"
+        android:title="Equipamiento exclusivo" />
+    <item
+        android:id="@id/moraleFragment"
+        android:icon="@drawable/ic_star_black_24dp"
+        android:title="Calculo moral" />
+</menu>

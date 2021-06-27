@@ -6,7 +6,7 @@ import com.deneb.epicsevenappdb.features.heroes.HeroesAdapter
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
-val applicationModule = module(override = true) {
+val applicationModule = module {
     /*scope(named<ArticlesFragment>()){
         factory { ArticleAdapter() }
     }*/
