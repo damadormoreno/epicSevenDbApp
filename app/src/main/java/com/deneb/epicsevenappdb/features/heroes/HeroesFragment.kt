@@ -20,12 +20,13 @@ import kotlinx.android.synthetic.main.fragment_heroes.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 @ExperimentalCoroutinesApi
 class HeroesFragment : BaseFragment<FragmentHeroesBinding>() {
 
-    private val getHeroesViewModel: GetHeroesViewModel by sharedViewModel()
+    private val getHeroesViewModel: GetHeroesViewModel by viewModel()
     private val filterViewModel: FilterViewModel by sharedViewModel()
     private val heroesAdapter: HeroesAdapter by inject()
 

@@ -18,7 +18,7 @@ fun Context.checkNetworkState(): Boolean {
             else -> false
         }
     } else {
-        return connectivityManager.activeNetworkInfo.isConnected
+        return connectivityManager.activeNetworkInfo?.isConnected!!
     }
 
 }
